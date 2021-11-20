@@ -14,9 +14,9 @@ var resultado = ''
 async function register(req, res) {
   try {
     cloudinary.config({
-      cloud_name: 'my-owne',
-      api_key: '327628669172468',
-      api_secret: 'LNotetZzgEplBeGVjsqm0jDZqdo',
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET,
     })
 
     cloudinary.uploader.upload(req.file.path, function (result, error) {
